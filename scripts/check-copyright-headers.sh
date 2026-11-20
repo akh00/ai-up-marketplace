@@ -73,7 +73,7 @@ done
 
 while IFS= read -r file; do
   [ -f "$file" ] || continue
-  if grep -qF "$COPYRIGHT_LINE" "$file"; then
+  if grep -qE 'Copyright [0-9]{4}' "$file"; then
     continue
   fi
 
@@ -83,6 +83,9 @@ while IFS= read -r file; do
     continue
   fi
 
+  # NOTE: --fix inserts the upstream AI Unified Process copyright line.
+  # Fork developers must write their own copyright headers; do not run --fix
+  # on new files you authored, as it will stamp them with the wrong author.
   tmp=$(mktemp)
   if [ "$(head -n 1 "$file")" = "---" ]; then
     # Insert after the closing delimiter of the YAML front matter.

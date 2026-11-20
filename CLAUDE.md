@@ -225,6 +225,9 @@ Skills follow the AI Unified Process phases: Inception, Elaboration, Constructio
 
 | Phase        | Skill (slash command)  | Description                                                          |
 |--------------|------------------------|----------------------------------------------------------------------|
+| Inception    | `/user-story`          | Create a Jira story as a tracking ticket with references to requirements, entity model, use cases, and architecture |
+| Inception    | `/user-story-review`   | Validate that all documentation references in a Jira story are present and consistent (read-only) |
+| Inception    | `/user-story-fix`      | Fetch an incomplete or incorrect Jira story, resolve gaps by running the appropriate skills, and update the issue in place |
 | Inception    | `/requirements`        | Generate requirements from vision                                    |
 | Elaboration  | `/entity-model`        | Create entity model with Mermaid ER                                  |
 | Elaboration  | `/use-case-diagram`    | Generate PlantUML use case diagrams                                  |
